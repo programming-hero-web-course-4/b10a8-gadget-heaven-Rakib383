@@ -6,8 +6,8 @@ import { FaBars } from "react-icons/fa6";
 export const Navbar = () => {
 
     return (
-        <div className="   mt-3 mx-2 ">
-            <nav className=" bg-[#9538E2] text-white max-w-7xl mx-auto px-8 rounded-tr-2xl rounded-tl-2xl flex justify-between items-center py-6 md:py-8 "  >
+        <div className="mt-3 mx-2 ">
+            <nav className=" bg-[#9538E2] text-white max-w-7xl mx-auto px-8 rounded-tr-2xl rounded-tl-2xl flex justify-between items-center py-5 md:py-4 "  >
                 <h2 className="cursor-pointer font-semibold">Gadget Heaven</h2>
                 {/* quick links */}
                 <div className="hidden md:flex gap-3">
