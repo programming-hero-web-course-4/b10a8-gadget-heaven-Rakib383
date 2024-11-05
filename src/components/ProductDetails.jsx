@@ -1,16 +1,20 @@
-import { useLoaderData, useParams } from "react-router-dom"
+import { useLoaderData, useOutletContext, useParams } from "react-router-dom"
 import ReactStars from "react-rating-stars-component";
 import { IoCartOutline } from "react-icons/io5";
 
 
-
 export const ProductDetails = () => {
+    const { handleCartItems, wishLists, handleWishList } = useOutletContext()
     const data = useLoaderData();
     const { productId } = useParams();
 
 
     const product = data.find(product => product.product_id === productId)
-    const { product_image, product_title, price, description, availability, rating } = product
+    const { product_id, product_image, product_title, price, description, availability, rating } = product
+
+    const isDisable = wishLists.some(item => item.product_id === product_id)
+
+
 
     return (
         <div className="bg-[#9538E2]  text-center pt-5 space-y-4 p-4 relative md:pb-36 md:mb-[340px] mb-[400px] sm:mb-80 pb-40 ">
@@ -24,7 +28,7 @@ export const ProductDetails = () => {
                 <div className="flex flex-col items-start py-6 px-5 gap-1.5">
                     <h2 className="font-bold text-base text-start">{product_title}</h2>
                     <p className="font-semibold">Price: ${price}</p>
-                    <button className="text-lime-800 px-2 py-1 bg-lime-200 border border-lime-800 rounded-full ">{availability ? "In Stock" : "Out of Stock"}</button>
+                    <button className={`text-lime-800 px-2 py-1 ${availability ? "bg-lime-200" : "bg-red-200 text-red-700"} border border-lime-800 rounded-full`}>{availability ? "In Stock" : "Out of Stock"}</button>
                     <p className="text-sm text-start text-gray-600 pr-6">{description}</p>
                     <h5 className="font-bold">Specification:</h5>
                     <ol className="list-decimal text-gray-600 ml-7">
@@ -48,8 +52,14 @@ export const ProductDetails = () => {
                     </div>
                     <div className="flex items-center gap-2
                     ">
-                        <button className="btn px-4 py-0.5  rounded-full text-white bg-[#9538E2] hover:text-[#9538E2]  hover:bg-white hover:outline outline-[#9538E2]">Add to Cart <IoCartOutline /> </button>
-                        <i className="fa-regular fa-heart px-2 py-1 text-[#9538E2] cursor-pointer text-xl bg-gray-200 rounded-full"></i>
+                        <button onClick={() => {
+                            handleCartItems(product)
+                        }
+                        } disabled={!availability}
+                            className="btn px-4 py-0.5  rounded-full text-white bg-[#9538E2] hover:text-[#9538E2]  hover:bg-white hover:outline outline-[#9538E2]">Add to Cart <IoCartOutline /> </button>
+                        <button   onClick={() => handleWishList(product)}>
+                            <i className={`fa-regular fa-heart px-2 py-1 text-[#9538E2]   text-xl bg-gray-200 rounded-full ${isDisable ? "opacity-30 cursor-not-allowed" : "hover:bg-[#9538E2] hover:text-white cursor-pointer"}`}></i>
+                        </button>
                     </div>
 
                 </div>
@@ -57,3 +67,5 @@ export const ProductDetails = () => {
         </div>
     )
 }
+
+

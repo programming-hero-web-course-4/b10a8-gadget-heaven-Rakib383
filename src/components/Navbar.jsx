@@ -2,8 +2,9 @@ import { NavLink } from "react-router-dom";
 import { IoCartOutline } from "react-icons/io5";
 import { CiHeart } from "react-icons/ci";
 import { FaBars } from "react-icons/fa6";
+import PropTypes from "prop-types";
 
-export const Navbar = () => {
+export const Navbar = ({cartItems}) => {
 
     return (
         <div className="mt-3 mx-2 ">
@@ -20,7 +21,7 @@ export const Navbar = () => {
                 <div className="flex gap-3 text-2xl items-center">
                    <div className="relative">
                    <IoCartOutline className="cursor-pointer hover:text-[#9538E2] hover:bg-white rounded-full md:text-3xl " />
-                   <div className="badge absolute -top-3.5 left-3">9</div>
+                   <div className="badge absolute -top-3.5 left-3">{cartItems.length}</div>
                    </div>
                     <CiHeart className="cursor-pointer hover:text-[#9538E2] hover:bg-white rounded-full md:text-3xl" />
                     <div className="dropdown dropdown-bottom dropdown-end text-xl md:hidden">
@@ -42,4 +43,8 @@ export const Navbar = () => {
 
         </div>
     )
+}
+
+Navbar.propTypes = {
+    cartItems:PropTypes.array.isRequired
 }
