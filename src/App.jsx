@@ -44,7 +44,8 @@ function App() {
 
 const handlePurchase = () => {
   setCartItems([]);
-  setTotalPrice(0)
+  setTotalPrice(0);
+  setIsDisable(true);
 }
 
   return (
