@@ -1,34 +1,4 @@
 [
-  
-  {
-    "category_name": "Phones",
-    "products": [
-      {
-        "product_id": "007",
-        "product_title": "Smartphone X Pro",
-        "product_image": "https://i.ibb.co.com/Pc5q0c3/0-MOps-Hl-Uqo-7f3a284e-eccf-4d5d-9c32-9fd1c4efffa7.jpg",
-        "price": 400,
-        "description": "High-end smartphone with excellent camera and performance.",
-        "Specification": [
-          "6.5-inch display",
-          "128GB storage",
-          "Triple-lens camera"
-        ],
-        "availability": true,
-        "rating": 4.8
-      },
-      {
-        "product_id": "008",
-        "product_title": "Budget Smartphone Y",
-        "product_image": "https://i.ibb.co.com/GPYcwSY/1627785755-unb-newswire.jpg",
-        "price": 360,
-        "description": "Affordable smartphone with solid features.",
-        "Specification": ["6-inch display", "64GB storage", "Dual-lens camera"],
-        "availability": true,
-        "rating": 4.2
-      }
-    ]
-  },
   {
     "category_name": "Laptops",
     "products": [
@@ -98,6 +68,37 @@
       }
     ]
   },
+  
+  {
+    "category_name": "Phones",
+    "products": [
+      {
+        "product_id": "007",
+        "product_title": "Smartphone X Pro",
+        "product_image": "https://i.ibb.co.com/Pc5q0c3/0-MOps-Hl-Uqo-7f3a284e-eccf-4d5d-9c32-9fd1c4efffa7.jpg",
+        "price": 400,
+        "description": "High-end smartphone with excellent camera and performance.",
+        "Specification": [
+          "6.5-inch display",
+          "128GB storage",
+          "Triple-lens camera"
+        ],
+        "availability": true,
+        "rating": 4.8
+      },
+      {
+        "product_id": "008",
+        "product_title": "Budget Smartphone Y",
+        "product_image": "https://i.ibb.co.com/GPYcwSY/1627785755-unb-newswire.jpg",
+        "price": 360,
+        "description": "Affordable smartphone with solid features.",
+        "Specification": ["6-inch display", "64GB storage", "Dual-lens camera"],
+        "availability": true,
+        "rating": 4.2
+      }
+    ]
+  },
+  
   {
     "category_name": "Smart Watches",
     "products": [

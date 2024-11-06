@@ -12,7 +12,7 @@ export const Navbar = ({ cartItems, wishLists }) => {
     return (
         <div className="mt-3 mx-2 ">
             <nav className={`${pathname === "/" ? "bg-[#9538E2] text-white" : "bg-white text-black"}  max-w-7xl mx-auto px-8 rounded-tr-2xl rounded-tl-2xl flex justify-between items-center py-5 md:py-4 `}  >
-                <h2 className="cursor-pointer font-semibold">Gadget Heaven</h2>
+                <h2 className={`${pathname !== "/" ? "text-[#9538E2] " : "" } cursor-pointer font-bold`}>Gadget Heaven</h2>
                 {/* quick links */}
                 <div className="hidden md:flex gap-3">
                     <NavLink to="/" className="hover:text-[#9538E2] hover:bg-white px-2.5 py-1 rounded-md">Home</NavLink>
