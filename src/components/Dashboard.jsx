@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 
 
 export const Dashboard = () => {
-    const { cartItems, wishLists, totalPrice, deleteWishItem, deleteCartItem, descendingSort, handlePurchase } = useOutletContext();
+    const { cartItems, wishLists, totalPrice, deleteWishItem, deleteCartItem, descendingSort, handlePurchase,isDisable } = useOutletContext();
 
     const { pathname } = useLocation()
 
@@ -27,7 +27,7 @@ export const Dashboard = () => {
 
             </div>
 
-            <Outlet context={{ cartItems, totalPrice, wishLists, deleteWishItem, deleteCartItem, descendingSort, handlePurchase }} />
+            <Outlet context={{ cartItems, totalPrice, wishLists, deleteWishItem, deleteCartItem, descendingSort, handlePurchase,isDisable }} />
 
         </div>
     )
