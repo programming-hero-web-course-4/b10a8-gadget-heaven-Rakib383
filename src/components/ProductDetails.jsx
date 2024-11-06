@@ -1,6 +1,8 @@
 import { useLoaderData, useOutletContext, useParams } from "react-router-dom"
 import ReactStars from "react-rating-stars-component";
 import { IoCartOutline } from "react-icons/io5";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const ProductDetails = () => {
@@ -13,6 +15,21 @@ export const ProductDetails = () => {
     const { product_id, product_image, product_title, price, description, availability, rating } = product
 
     const isDisable = wishLists.some(item => item.product_id === product_id)
+
+    const cartMessage = () => {
+        toast.success("Item added to Cart", {
+            position: "top-center",
+            autoClose: 4000,
+        });
+    }
+
+    const wishMessage = () => {
+        toast.success("Item added to wishList", {
+            position: "top-center",
+            autoClose: 4000,
+        });
+    }
+
 
 
 
@@ -53,17 +70,23 @@ export const ProductDetails = () => {
                     <div className="flex items-center gap-2
                     ">
                         <button onClick={() => {
-                            handleCartItems(product)
+                            handleCartItems(product);
+                            cartMessage()
+
                         }
                         } disabled={!availability}
                             className="btn px-4 py-0.5  rounded-full text-white bg-[#9538E2] hover:text-[#9538E2]  hover:bg-white hover:outline outline-[#9538E2]">Add to Cart <IoCartOutline /> </button>
-                        <button   onClick={() => handleWishList(product)}>
+                        <button onClick={() => {
+                            handleWishList(product)
+                            wishMessage()
+                        }}>
                             <i className={`fa-regular fa-heart px-2 py-1 text-[#9538E2]   text-xl bg-gray-200 rounded-full ${isDisable ? "opacity-30 cursor-not-allowed" : "hover:bg-[#9538E2] hover:text-white cursor-pointer"}`}></i>
                         </button>
                     </div>
 
                 </div>
             </div>
+            <ToastContainer />
         </div>
     )
 }

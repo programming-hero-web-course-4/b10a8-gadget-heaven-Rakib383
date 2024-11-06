@@ -46,7 +46,7 @@ const handlePurchase = () => {
 
   return (
     <>
-    <Navbar cartItems={cartItems}/>
+    <Navbar cartItems={cartItems} wishLists={wishLists}/>
     {
       <Outlet context={{handleCartItems,cartItems,handleWishList,wishLists,totalPrice,deleteWishItem,deleteCartItem,descendingSort,handlePurchase}} />
     }

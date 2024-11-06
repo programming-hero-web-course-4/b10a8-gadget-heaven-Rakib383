@@ -1,7 +1,5 @@
 import { Link, Outlet, useLocation, useOutletContext } from "react-router-dom";
 import { useState } from "react";
-// import { WishList } from "./WishList";
-// import { CartList } from "./CartList";
 
 
 export const Dashboard = () => {
@@ -26,9 +24,6 @@ export const Dashboard = () => {
 
             </div>
 
-            {/* {
-                isCart ? <CartList cartItems={cartItems}  totalPrice={totalPrice} /> : <WishList wishLists={wishLists} deleteWishItem={deleteWishItem} />
-            } */}
             <Outlet context={{ cartItems, totalPrice, wishLists, deleteWishItem,deleteCartItem,descendingSort,handlePurchase }} />
 
         </div>

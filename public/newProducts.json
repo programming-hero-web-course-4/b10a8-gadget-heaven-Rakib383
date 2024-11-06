@@ -1,0 +1,46 @@
+[
+ 
+  {
+    "product_id": "015",
+    "product_title": "Pro Smartphone Z",
+    "product_image": "https://i.ibb.co.com/949LXmd/bd-galaxy-z-fold5-f946-sm-f946blbdbkd-thumb-537489358.png",
+    "category": "Phones",
+    "price": 900,
+    "description": "Flagship smartphone with an exceptional camera and fast performance.",
+    "Specification": [
+      "6.7-inch AMOLED display",
+      "256GB storage",
+      "Quad-lens camera system",
+      "5G support"
+    ]
+  },
+  {
+    "product_id": "016",
+    "product_title": "Budget Laptop Essential",
+    "product_image": "https://i.ibb.co.com/7YCzw9j/laptopsunder500-2048px-5452.jpg",
+    "category": "Laptops",
+    "price": 500,
+    "description": "Affordable and reliable laptop for everyday use.",
+    "Specification": [
+      "14-inch Full HD display",
+      "8GB RAM",
+      "512GB SSD",
+      "Integrated graphics"
+    ]
+
+  },
+  {
+    "product_id": "014",
+    "product_title": "High-End Gaming Laptop X",
+    "product_image": "https://i.ibb.co.com/tHkrB12/577b5040-f0cb-11ed-8baa-32919eb8c47a.jpg",
+    "category": "Laptops",
+    "price": 1200,
+    "description": "Advanced gaming laptop with top performance and visuals.",
+    "Specification": [
+      "17.3-inch 4K display",
+      "32GB RAM",
+      "NVIDIA GeForce RTX 3080",
+      "1TB SSD"
+    ]
+  }
+]
