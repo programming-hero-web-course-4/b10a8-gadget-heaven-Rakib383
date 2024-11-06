@@ -76,7 +76,7 @@ export const ProductDetails = () => {
                         }
                         } disabled={!availability}
                             className="btn px-4 py-0.5  rounded-full text-white bg-[#9538E2] hover:text-[#9538E2]  hover:bg-white hover:outline outline-[#9538E2]">Add to Cart <IoCartOutline /> </button>
-                        <button onClick={() => {
+                        <button disabled={isDisable} onClick={() => {
                             handleWishList(product)
                             wishMessage()
                         }}>
