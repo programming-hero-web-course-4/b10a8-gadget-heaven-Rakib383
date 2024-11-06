@@ -11,6 +11,7 @@ import { CartList } from './components/CartList.jsx';
 import { WishList } from './components/WishList';
 import { NewProductsList } from './components/NewProductsList.jsx';
 import { HelmetProvider } from 'react-helmet-async';
+import { Statistics } from './components/Statistics.jsx';
 
 
 const router = createBrowserRouter([
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
             element: <WishList />
           }
         ]
+      },
+      {
+        path:"statistics",
+        element:<Statistics/>
       },
       {
         path: "newProducts",
