@@ -12,12 +12,12 @@ function App() {
   const [cartItems,setCartItems] = useState([]);
   const [wishLists,setWishLists] = useState([]);
   const [totalPrice,setTotalPrice] = useState(0);
-  const [isDisable,setIsDisable] = useState(true)
+  
 
   const handleCartItems = (product) => {
     setCartItems([...cartItems,product])
     setTotalPrice(totalPrice+product.price)
-    setIsDisable(false)
+    
   }
   const handleWishList = (product) => {
     setWishLists([...wishLists,product])
@@ -33,6 +33,7 @@ function App() {
     updatedCartItems.splice(index,1);
     setTotalPrice(totalPrice-price)
     setCartItems(updatedCartItems)
+    
   }
 
   const descendingSort = () => {
@@ -45,7 +46,7 @@ function App() {
 const handlePurchase = () => {
   setCartItems([]);
   setTotalPrice(0);
-  setIsDisable(true);
+
 }
 
   return (
@@ -53,7 +54,7 @@ const handlePurchase = () => {
     
     <Navbar cartItems={cartItems} wishLists={wishLists}/>
     {
-      <Outlet context={{handleCartItems,cartItems,handleWishList,wishLists,totalPrice,deleteWishItem,deleteCartItem,descendingSort,handlePurchase,isDisable}} />
+      <Outlet context={{handleCartItems,cartItems,handleWishList,wishLists,totalPrice,deleteWishItem,deleteCartItem,descendingSort,handlePurchase}} />
     }
     <Footer/>
     </>
