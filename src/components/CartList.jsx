@@ -1,13 +1,14 @@
 
-import { useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import filterImg from "../assets/filter.png"
 import { CartProduct } from "./CartProduct"
-import PropTypes from "prop-types";
 import modalImg from "../assets/Group.png"
 
 export const CartList = () => {
 
-    const { cartItems, totalPrice, descendingSort,handlePurchase } = useOutletContext();
+    const { cartItems, totalPrice, descendingSort, handlePurchase } = useOutletContext();
+    const navigate = useNavigate();
+
 
 
     return (
@@ -21,7 +22,7 @@ export const CartList = () => {
                         <img className="w-4 h-4" src={filterImg} alt="" />
                     </div>
 
-                    <button onClick={()=>document.getElementById('my_modal_1').showModal()} className="bg-[#9538E2] text-white px-3.5 py-2 text-sm  rounded-full">Purchase</button>
+                    <button onClick={() => document.getElementById('my_modal_1').showModal()} className={` ${totalPrice == 0 ? " opacity-40 cursor-not-allowed" : "hover:text-[#9538E2] hover:bg-white outline"} bg-[#9538E2] text-white px-3.5 py-2 text-sm rounded-full`}>Purchase</button>
 
                 </div>
             </div>
@@ -35,14 +36,18 @@ export const CartList = () => {
             <dialog id="my_modal_1" className="modal w-[400px] mx-auto">
                 <div className="modal-box items-center justify-center flex flex-col gap-1">
                     <img src={modalImg} alt="" />
-                    <h3 className="font-bold text-lg mt-3">Payment Successfully</h3>
+                    <h3 className="font-bold text-lg mt-3">Payment Successfull</h3>
                     <div className="divider m-0"></div>
-                    <p className="py-2">Thanks for purchsing.</p>
+                    <p className="py-2">Thanks for purchasing.</p>
                     <h5 className="font-bold">Total: ${totalPrice}</h5>
                     <div className="modal-action w-full ">
                         <form method="dialog" className=" px-6 w-full">
-                           
-                            <button onClick={handlePurchase}  className="btn w-full rounded-full ">Close</button>
+
+                            <button onClick={() => {
+                                handlePurchase()
+                                navigate("/")
+                            }} className="btn w-full rounded-full ">Close</button>
+
                         </form>
                     </div>
                 </div>
@@ -52,8 +57,3 @@ export const CartList = () => {
     )
 }
 
-CartList.propTypes = {
-    cartItems: PropTypes.array,
-    totalPrice: PropTypes.number
-
-}

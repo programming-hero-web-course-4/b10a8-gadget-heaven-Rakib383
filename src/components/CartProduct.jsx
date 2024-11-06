@@ -1,6 +1,8 @@
 
 import { RxCrossCircled } from "react-icons/rx";
 import { useOutletContext } from "react-router-dom";
+import PropTypes from "prop-types";
+
 export const CartProduct = ({ item }) => {
     const { product_image, product_id, product_title, description, price } = item
     const {deleteCartItem} = useOutletContext();
@@ -19,4 +21,8 @@ export const CartProduct = ({ item }) => {
             <button onClick={() => deleteCartItem(product_id,price)}><RxCrossCircled className="text-2xl text-red-400 mr-8 mb-16" /></button>
         </div>
     )
+}
+
+CartProduct.propTypes = {
+    item:PropTypes.object
 }

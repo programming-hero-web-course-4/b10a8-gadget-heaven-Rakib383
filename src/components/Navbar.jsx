@@ -25,12 +25,12 @@ export const Navbar = ({ cartItems, wishLists }) => {
                     <div className="relative">
                         <Link to="/dashboard/cart">
                             <IoCartOutline className="cursor-pointer hover:text-[#9538E2] hover:bg-white rounded-full md:text-3xl " /></Link>
-                        <div className="badge absolute -top-3.5 left-3">{cartItems.length}</div>
+                        <div className="badge absolute -top-3.5 left-3 text-red-500">{cartItems.length}</div>
                     </div>
                     <Link to="/dashboard/wishList" >
                         <div className="relative">
                             <CiHeart className="cursor-pointer hover:text-[#9538E2] hover:bg-white rounded-full md:text-3xl" />
-                            <div className="badge absolute -top-3.5 left-3">{wishLists.length}</div>
+                            <div className="badge absolute -top-3.5 left-3 text-red-500">{wishLists.length}</div>
                         </div>
 
                     </Link>

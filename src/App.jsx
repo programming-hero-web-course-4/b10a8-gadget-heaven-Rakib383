@@ -6,6 +6,7 @@ import { Navbar } from './components/Navbar';
 import { useState } from 'react';
 
 
+
 function App() {
   
   const [cartItems,setCartItems] = useState([]);
@@ -38,14 +39,15 @@ function App() {
     setCartItems(sortedItems)   
 }
 
+
 const handlePurchase = () => {
-  
+  setCartItems([]);
   setTotalPrice(0)
-  setCartItems([])
 }
 
   return (
     <>
+    
     <Navbar cartItems={cartItems} wishLists={wishLists}/>
     {
       <Outlet context={{handleCartItems,cartItems,handleWishList,wishLists,totalPrice,deleteWishItem,deleteCartItem,descendingSort,handlePurchase}} />

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Card } from "./Card";
 import { Hero } from "./Hero";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -11,12 +12,13 @@ export const Home = () => {
     
 
     useEffect(() => {
+
+            // fetching all products 
         fetch("products.json")
             .then(res => res.json())
             .then(data => setProducts(data))
             
         // category fatching
-
         fetch("productCategories.json")
             .then(res => res.json())
             .then(data => setCategories(data))
@@ -25,7 +27,6 @@ export const Home = () => {
     }, [])
 
     const handleActiveBtn = (categoryBtn) => {
-
 
         const activeBtns = document.querySelectorAll('.active-btn')
         activeBtns.forEach(button => button.classList.remove('active-btn'))
@@ -50,17 +51,20 @@ export const Home = () => {
     return (
         <div>
 
-            {/*  Hero section */}
+            <Helmet>
+                <title>Gadgets | Gadget Heaven</title>
+            </Helmet>
+
             <Hero />
 
             {/*   Product cards */}
             <div className="mt-56 lg:mt-72 max-w-7xl mx-auto">
                 <h4 className="text-2xl font-bold mb-8 text-center">Explore Cutting-Edge Gadgets</h4>
+
                 {/* categories */}
                 <div className="flex gap-5 mt-5 justify-center">
 
                     {/* buttons */}
-
                     <div className="flex flex-col w-40 px-4 py-5 gap-3 shadow-md rounded-lg ml-4 h-[270px]">
                         <button onClick={() => handleActiveBtn("All-product")} id="All-product" className="btn rounded-full active-btn  px-5  ">All Product</button>
                         {categories.map(category => (<button onClick={() => handleActiveBtn(category.category_name)} key={category.category_name} id={category.category_name} className="btn rounded-full  px-5 bg-gray-200 ">{category.category_name}</button>))}

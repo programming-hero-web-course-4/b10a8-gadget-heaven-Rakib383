@@ -26,6 +26,8 @@ export const WishProduct = ({ item,deleteWishItem }) => {
 }
 
 WishProduct.propTypes = {
-    item: PropTypes.object
+    item: PropTypes.object,
+    deleteWishItem: PropTypes.func
+    
 }
 
