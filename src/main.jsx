@@ -6,6 +6,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ErrorPage } from './components/ErrorPage.jsx';
 import { Home } from './components/Home.jsx';
 import { ProductDetails } from './components/ProductDetails.jsx';
+import { Dashboard } from './components/Dashboard.jsx';
+import { CartList } from './components/CartList.jsx';
+import { WishList } from './components/WishList';
 
 
 const  router = createBrowserRouter([
@@ -22,6 +25,20 @@ const  router = createBrowserRouter([
         path:"productDetails/:productId",
         element:<ProductDetails/>,
         loader:() => fetch("/products.json")
+      },
+      {
+        path:"dashboard",
+        element:<Dashboard/>,
+        children:[
+          {
+            path:"cart",
+            element:<CartList/>
+          },
+          {
+            path:"wishList",
+            element:<WishList/>
+          }
+        ]
       }
     ]
   }

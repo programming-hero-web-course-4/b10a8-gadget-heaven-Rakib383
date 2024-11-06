@@ -11,3 +11,12 @@
   background-color:#9538E2;
 
 }
+.active-tab {
+  color:#9538E2;
+  background-color: white;
+  
+}
+.active {
+  text-decoration: underline;
+  font-weight: 800;
+}
