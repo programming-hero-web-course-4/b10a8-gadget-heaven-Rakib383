@@ -7,11 +7,11 @@ import modalImg from "../assets/Group.png"
 
 export const CartList = () => {
 
-    const { cartItems, totalPrice, descendingSort, handlePurchase} = useOutletContext();
+    const { cartItems, totalPrice, descendingSort, handlePurchase } = useOutletContext();
     const navigate = useNavigate();
 
-    
-   
+
+
 
 
     return (
@@ -25,14 +25,14 @@ export const CartList = () => {
                         <img className="w-4 h-4" src={filterImg} alt="" />
                     </div>
 
-                    <button  onClick={() => {
-                        if(cartItems.length > 0) {
+                    <button onClick={() => {
+                        if (cartItems.length > 0) {
                             document.getElementById('my_modal_1').showModal()
                         }
-                          
+
                     }
-                       
-                         } className={` ${totalPrice == 0 ? " opacity-40 cursor-not-allowed " : "hover:text-[#9538E2] hover:bg-white outline"} bg-[#9538E2] text-white px-3.5 py-2 text-sm rounded-full`}>Purchase</button>
+
+                    } className={` ${totalPrice == 0 ? " opacity-40 cursor-not-allowed " : "hover:text-[#9538E2] hover:bg-white outline"} bg-[#9538E2] text-white px-3.5 py-2 text-sm rounded-full`}>Purchase</button>
 
                 </div>
             </div>
